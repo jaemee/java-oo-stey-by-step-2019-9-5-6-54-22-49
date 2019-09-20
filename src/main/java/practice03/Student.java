@@ -15,10 +15,6 @@ public class Student extends Person{
         return klass;
     }
 
-    public void setKlass(int klass) {
-        this.klass = klass;
-    }
-
     @Override
     public String introduce() {
         StringBuilder intro = new StringBuilder("I am a Student. I am at Class ").append(getKlass()).append(".");
