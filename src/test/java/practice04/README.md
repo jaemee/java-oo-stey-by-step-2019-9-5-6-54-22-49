@@ -7,7 +7,6 @@ Then create class Student to inherit class Person. There are fields name, age, k
 
 >My name is Tom. I am 21 years old. I am a Student. I am at Class 2.
 
-
 Then create class Worker to inherit class Person. There are fields name, age, a method named introduce in class Workder. Method introduce should return string like this:
 
 >My name is Tom. I am 21 years old. I am a Worker. I have a job.
