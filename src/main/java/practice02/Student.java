@@ -1,19 +1,32 @@
 package practice02;
 
 public class Student extends Person {
-
+    private int age;
+    private String name;
     private int klass;
 
     public Student(String name, int age) {
         super(name, age);
     }
+
     public Student(String name, int age, int klass) {
-        super(name, age);
+        this.name = name;
+        this.age = age;
         this.klass = klass;
     }
 
     public int getKlass() {
         return klass;
+    }
+
+    @Override
+    public int getAge() {
+        return age;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
     @Override
