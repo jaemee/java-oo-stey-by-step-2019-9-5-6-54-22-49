@@ -1,10 +1,8 @@
 package practice09;
 
-import java.io.*;
-
 public class Klass {
     private int number;
-    private Student student;
+    private Student leader;
 
     public Klass(int number) {
         this.number = number;
@@ -22,14 +20,14 @@ public class Klass {
         if(getNumber()!=student.getKlass().getNumber()){
             System.out.append("It is not one of us.\n");
         }else{
-            this.student = student;
+            this.leader = student;
             System.out.flush();
         }
 
     }
 
     Student getLeader() {
-        return this.student;
+        return this.leader;
     }
 
     void appendMember(Student student) {
