@@ -34,9 +34,7 @@ public class Person {
     }
 
     public boolean equals(Object second){
-        if(!(second instanceof Object))
-            return false;
         Person temp = (Person) second;
-        return this.name == temp.name && this.id == temp.id && this.age == temp.age;
+        return this.name.equals(temp.name)&& this.id.equals(temp.id) && this.age.equals(temp.age);
     }
 }
