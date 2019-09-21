@@ -2,13 +2,17 @@ package practice06;
 
 public class Teacher extends Person {
     private Integer klass;
+    private String name;
+    private int age;
 
     public Teacher(String name, int age) {
-        super(name, age);
+        this.name = name;
+        this.age = age;
     }
 
     public Teacher(String name, int age, int klass) {
-        super(name, age);
+        this.name = name;
+        this.age = age;
         this.klass = klass;
     }
 
@@ -29,4 +33,13 @@ public class Teacher extends Person {
         return klass;
     }
 
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public int getAge() {
+        return age;
+    }
 }
