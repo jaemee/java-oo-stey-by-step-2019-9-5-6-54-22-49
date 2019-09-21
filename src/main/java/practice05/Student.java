@@ -6,7 +6,6 @@ public class Student extends Person {
     private int klass;
 
     public Student(String name, int age) {
-        super(name, age);
         this.name = name;
         this.age = age;
     }
