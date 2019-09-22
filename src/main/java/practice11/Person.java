@@ -1,5 +1,7 @@
 package practice11;
 
+import java.util.Observable;
+
 public class Person {
     private Integer age;
     private String name;

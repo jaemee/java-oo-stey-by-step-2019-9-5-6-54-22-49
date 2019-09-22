@@ -29,7 +29,13 @@ public class Student extends Person{
         }else {
             intro.append("at ");
         }
-
         return intro.append(klass.getDisplayName()).append(".").toString();
+    }
+
+    public boolean isIn(Klass klass){
+        if(klass.getNumber() == this.getKlass().getNumber()){
+            return true;
+        }
+        return false;
     }
 }

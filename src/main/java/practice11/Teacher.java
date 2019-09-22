@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Observable;
 import java.util.Observer;
 
-public class Teacher extends Person implements Observer {
+public class Teacher extends Person implements Observer{
     private Klass klass;
     private int id;
     private int age;
@@ -33,6 +33,7 @@ public class Teacher extends Person implements Observer {
     public Teacher(Integer id, String name, Integer age, LinkedList<Klass> klassList){
         super(id, name, age);
         this.klassList = klassList;
+        this.klassList.forEach(klass -> klass.addObserver(this));
     }
 
     LinkedList<Klass> getClasses(){
@@ -80,11 +81,22 @@ public class Teacher extends Person implements Observer {
     }
 
     public boolean isTeaching(Student student) {
+        klassList.forEach(klass -> {
+            if(student.isIn(klass) && !student.equals(klass.getLeader())){
+                System.out.append("I am Tom. I know ").append(student.getName())
+                        .append(" has joined ").append(klass.getDisplayName()).append(".\n");
+            }
+            if(student.equals(klass.getLeader())){
+                System.out.append("I am Tom. I know ").append(student.getName())
+                        .append(" become Leader of ").append(klass.getDisplayName()).append(".\n");
+            }
+        });
+
         return getClasses().contains(student.getKlass());
     }
 
     @Override
-    public void update(Observable o, Object arg) {
-        this.klass = new Klass(klass.getNumber());
+    public void update(Observable o, Object student) {
+        isTeaching((Student) student);
     }
 }

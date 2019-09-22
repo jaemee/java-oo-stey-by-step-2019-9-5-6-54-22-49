@@ -23,10 +23,8 @@ public class Klass extends Observable {
             System.out.append("It is not one of us.\n");
         }else{
             this.leader = student;
-            System.out.append("I am Tom. I know ").append(student.getName())
-                    .append(" become Leader of ").append(getDisplayName()).append(".\n");
             setChanged();
-            notifyObservers(getNumber());
+            notifyObservers(student);
         }
     }
 
@@ -36,10 +34,9 @@ public class Klass extends Observable {
 
     void appendMember(Student student) {
             student.getKlass().number = this.getNumber();
-            System.out.append("I am Tom. I know ").append(student.getName())
-                    .append(" has joined ").append(getDisplayName()).append(".\n");
             setChanged();
-            notifyObservers(getNumber());
+            notifyObservers(student);
 
     }
+
 }

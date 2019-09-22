@@ -23,7 +23,6 @@ public class Klass {
             this.leader = student;
             System.out.flush();
         }
-
     }
 
     Student getLeader() {
